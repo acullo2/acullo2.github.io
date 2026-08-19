@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Flood Risk Assessment | Anton Cullo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f6f9;
+            color: #1a1a2e;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .back {
+            display: inline-block;
+            color: #0D9488;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .back:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        .tags span {
+            background: #e6f7f4;
+            color: #0D9488;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .content {
+            line-height: 1.8;
+            color: #1e293b;
+        }
+        .content h2 {
+            margin: 30px 0 15px;
+            font-size: 1.3rem;
+        }
+        .content p {
+            margin-bottom: 16px;
+        }
+        .map-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin: 30px 0;
+        }
+        .map-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fafbfc;
+        }
+        .map-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .map-item .caption {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .map-item .map-placeholder {
+            background: #eef2f6;
+            border-radius: 8px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 0.95rem;
+            border: 2px dashed #cbd5e1;
+        }
+        .map-item .map-placeholder img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 6px;
+        }
+        .download-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #0D9488;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .download-link:hover { text-decoration: underline; }
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 28px;
+            background: #0D9488;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-to-portfolio:hover {
+            background: #0a7a6a;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">← Back to Portfolio</a>
+
+        <h1>Coastal Flood Risk Assessment</h1>
+        <div class="subtitle">Multi-criteria flood vulnerability model for three coastal counties</div>
+        <div class="tags">
+            <span>QGIS</span>
+            <span>Python</span>
+            <span>Raster Analysis</span>
+            <span>DEM</span>
+        </div>
+
+        <div class="content">
+            <h2>Overview</h2>
+            <p>This project developed a multi-criteria flood vulnerability model for three coastal counties. Integrated DEM, precipitation data, land cover, and proximity to water bodies. Used Analytic Hierarchy Process for weighting.</p>
+
+            <h2>Methods</h2>
+            <p>Built Python scripts in GeoPandas and Rasterio to automate data preprocessing. Reduced analysis time from two weeks to three days.</p>
+
+            <h2>Results</h2>
+            <p>Delivered maps as static layouts and interactive Leaflet maps for emergency management.</p>
+        </div>
+
+        <div class="map-grid">
+            <div class="map-item">
+                <h3>Flood Risk Zones</h3>
+                <div class="caption">Areas classified by flood vulnerability using DEM, rainfall, and land cover data.</div>
+                <div class="map-placeholder">
+                    <p>Map image here: <a href="/images/flood-risk-zones.jpg" target="_blank">View image</a></p>
+                </div>
+            </div>
+            <div class="map-item">
+                <h3>Vulnerability Index</h3>
+                <div class="caption">Weighted multi-criteria index showing relative vulnerability across the study area.</div>
+                <div class="map-placeholder">
+                    <p>Map image here: <a href="/images/vulnerability-index.jpg" target="_blank">View image</a></p>
+                </div>
+            </div>
+        </div>
+
+        <a href="/maps/flood-risk-map.pdf" class="download-link">↓ Download Full Report (PDF)</a>
+
+        <br><br>
+        <a href="/" class="back-to-portfolio">← Back to Portfolio</a>
+
+        <div class="footer">
+            Anton Cullo · GIS Portfolio
+        </div>
+    </div>
+</body>
+</html>
