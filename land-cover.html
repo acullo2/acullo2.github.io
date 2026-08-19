@@ -1,7 +1,182 @@
-<h1>Land Cover Change Detection (2000-2020)</h1>
-<div class="subtitle">20-year Landsat time series analysis</div>
-<div class="tags">
-    <span>Google Earth Engine</span>
-    <span>R</span>
-    <span>Random Forest</span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Cover Change Detection | Anton Cullo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050d08;
+            color: #d7f5e2;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #0a1810;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(120,220,160,0.18);
+        }
+        .back {
+            display: inline-block;
+            color: #739627;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .back:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #7da890;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        .tags span {
+            background: rgba(120,220,160,0.08);
+            border: 1px solid rgba(120,220,160,0.18);
+            color: #739627;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .content {
+            line-height: 1.8;
+            color: #7da890;
+        }
+        .content h2 {
+            color: #d7f5e2;
+            margin: 30px 0 15px;
+            font-size: 1.3rem;
+        }
+        .content p {
+            margin-bottom: 16px;
+        }
+        .map-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin: 30px 0;
+        }
+        .map-item {
+            border: 1px solid rgba(120,220,160,0.18);
+            border-radius: 12px;
+            padding: 20px;
+            background: #0a1810;
+        }
+        .map-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .map-item .caption {
+            color: #7da890;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .map-item .map-placeholder {
+            background: #050d08;
+            border-radius: 8px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7da890;
+            font-size: 0.95rem;
+            border: 2px dashed rgba(120,220,160,0.18);
+        }
+        .map-item .map-placeholder img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 6px;
+        }
+        .map-item .map-placeholder a {
+            color: #739627;
+        }
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 28px;
+            background: #739627;
+            color: #050d08;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-to-portfolio:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(120,220,160,0.18);
+            font-size: 0.85rem;
+            color: #7da890;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">← Back to Portfolio</a>
+
+        <h1>Land Cover Change Detection (2000-2020)</h1>
+        <div class="subtitle">20-year Landsat time series analysis</div>
+        <div class="tags">
+            <span>Google Earth Engine</span>
+            <span>R</span>
+            <span>Random Forest</span>
+            <span>NDVI</span>
+        </div>
+
+        <div class="content">
+            <h2>Overview</h2>
+            <p>Analyzed 20 years of Landsat 5, 7, and 8 imagery across 10,000 sq km. Applied Random Forest classification in Google Earth Engine. Calculated NDVI time series and identified land cover transitions using post-classification comparison.</p>
+
+            <h2>Results</h2>
+            <p>Quantified 15% forest loss, 22% urban expansion, and 8% agricultural conversion.</p>
+        </div>
+
+        <div class="map-grid">
+            <div class="map-item">
+                <h3>Land Cover Classification</h3>
+                <div class="caption">Classification of land cover types from 2020 imagery.</div>
+                <div class="map-placeholder">
+                    <p>📊 <a href="/images/land-cover-classification.jpg" target="_blank">View map image</a></p>
+                </div>
+            </div>
+            <div class="map-item">
+                <h3>Change Detection</h3>
+                <div class="caption">Areas of forest loss, urban expansion, and agricultural conversion identified between 2000-2020.</div>
+                <div class="map-placeholder">
+                    <p>📊 <a href="/images/change-detection.jpg" target="_blank">View map image</a></p>
+                </div>
+            </div>
+        </div>
+
+        <a href="/" class="back-to-portfolio">← Back to Portfolio</a>
+
+        <div class="footer">
+            Anton Cullo · GIS Portfolio
+        </div>
+    </div>
+</body>
+</html>
